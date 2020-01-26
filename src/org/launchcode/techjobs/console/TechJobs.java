@@ -62,8 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    ArrayList<HashMap<String, String>> allJobs = JobData.findAll();
-                    printJobs(allJobs);
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
 
